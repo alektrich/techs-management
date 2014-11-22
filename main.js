@@ -62,6 +62,17 @@ $(document).ready(function() {
       var bounds = map.getBounds();
       searchBox.setBounds(bounds);
     });
+
+
+    var newMarker = new google.maps.Marker({
+      position: map.getCenter(),
+      icon: {
+        path: google.maps.SymbolPath.CIRCLE,
+        scale: 10
+      },
+      draggable: true,
+      map: map
+    });
   }
 
   google.maps.event.addDomListener(window, 'load', initialize);
