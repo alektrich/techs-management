@@ -5,12 +5,12 @@ $(document).ready(function() {
 
     var markers = [];
     var map = new google.maps.Map(document.getElementById('map-canvas'), {
-      mapTypeId: google.maps.MapTypeId.ROADMAP
+      mapTypeId: google.maps.MapTypeId.ROADMAP,
     });
 
     var defaultBounds = new google.maps.LatLngBounds(
-        new google.maps.LatLng(-33.8902, 151.1759),
-        new google.maps.LatLng(-33.8474, 151.2631));
+        new google.maps.LatLng(43.6382, -79.4377),
+        new google.maps.LatLng(43.6764, -79.3000));
     map.fitBounds(defaultBounds);
 
     var input = /** @type {HTMLInputElement} */(
@@ -61,17 +61,6 @@ $(document).ready(function() {
     google.maps.event.addListener(map, 'bounds_changed', function() {
       var bounds = map.getBounds();
       searchBox.setBounds(bounds);
-    });
-
-
-    var newMarker = new google.maps.Marker({
-      position: map.getCenter(),
-      icon: {
-        path: google.maps.SymbolPath.CIRCLE,
-        scale: 10
-      },
-      draggable: true,
-      map: map
     });
   }
 
