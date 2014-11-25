@@ -20,6 +20,12 @@ $(document).ready(function() {
     var searchBox = new google.maps.places.SearchBox(
       /** @type {HTMLInputElement} */(input));
 
+    var marker = new google.maps.Marker({
+        position: new google.maps.LatLng(43.6542, -79.3900),
+        map: map,
+        title: 'Testing marker - We can use here any image we want, this is just a static marker, but it is possible to make it dynamic and I will work on it this week.'
+    });
+
     google.maps.event.addListener(searchBox, 'places_changed', function() {
       var places = searchBox.getPlaces();
 
