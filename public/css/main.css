@@ -59,3 +59,7 @@ h1.title {
   font-family: Roboto;
   display: none;
 }
+
+input#pac-input {
+  display: none;
+}

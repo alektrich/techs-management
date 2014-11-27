@@ -15,6 +15,8 @@ $(document).ready(function() {
 
     var input = /** @type {HTMLInputElement} */(
         document.getElementById('pac-input'));
+
+
     map.controls[google.maps.ControlPosition.TOP_LEFT].push(input);
 
     var searchBox = new google.maps.places.SearchBox(
@@ -73,6 +75,7 @@ $(document).ready(function() {
   google.maps.event.addDomListener(window, 'load', initialize);
 
   $('h1.title').fadeIn();
+  $('#pac-input').fadeIn();
   
   
 });
