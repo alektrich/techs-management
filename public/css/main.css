@@ -60,6 +60,13 @@ h1.title {
   display: none;
 }
 
+p.tip {
+  margin-left: 10px; 
+  font-family: Roboto;
+  display: none;
+  font-size: 12px;
+}
+
 input#pac-input {
   display: none;
 }

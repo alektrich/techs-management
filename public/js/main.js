@@ -22,10 +22,36 @@ $(document).ready(function() {
     var searchBox = new google.maps.places.SearchBox(
       /** @type {HTMLInputElement} */(input));
 
-    var marker = new google.maps.Marker({
+    var markerRed = new google.maps.Marker({
         position: new google.maps.LatLng(43.6542, -79.3900),
         map: map,
-        title: 'Testing marker - We can use here any image we want, this is just a static marker, but it is possible to make it dynamic and I will work on it this week.'
+        icon: pinRed,
+        draggable: true,
+        title: 'Red testing marker - draggable'
+    });
+
+    var markerBlue = new google.maps.Marker({
+        position: new google.maps.LatLng(43.6542, -79.3600),
+        map: map,
+        icon: pinBlue,
+        draggable: true,
+        title: 'Blue testing marker - draggable'
+    });
+
+    var markerYellow = new google.maps.Marker({
+        position: new google.maps.LatLng(43.6652, -79.3900),
+        map: map,
+        icon: pinYellow,
+        draggable: true,
+        title: 'Yellow testing marker - draggable'
+    });
+
+    var markerBlack = new google.maps.Marker({
+        position: new google.maps.LatLng(43.6642, -79.3600),
+        map: map,
+        icon: pinBlack,
+        draggable: true,
+        title: 'Black testing marker - draggable'
     });
 
     google.maps.event.addListener(searchBox, 'places_changed', function() {
@@ -74,9 +100,7 @@ $(document).ready(function() {
 
   google.maps.event.addDomListener(window, 'load', initialize);
 
-  $('h1.title').fadeIn();
-  $('#pac-input').fadeIn();
-  
+  $('h1.title, p.tip, #pac-input').fadeIn();
   
 });
 
