@@ -9,6 +9,7 @@
 	{{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js') }}
 	{{ HTML::script('js/bootstrap/bootstrap.min.js') }}
 	{{ HTML::script('js/navbar.js') }}
+	{{ HTML::script('js/dashboard.js') }}
 </head>
 <body>
 
@@ -32,43 +33,49 @@
 	        <ul class="sidebar-nav">
 	            <li>
             		<div class="dropdown companyTechs">
-					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown" aria-expanded="true">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="toronto" data-toggle="dropdown" aria-expanded="true">
 					    Toronto
 					    <span class="caret"></span>
 					  </button>
-					  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu1">
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Technician 1</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Technician 2</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Technician 3</a></li>
-					  </ul>
 					</div>
 	            </li>
+	            <div id="torontoTechs">
+		            <ul>
+			            <li>Tehnician 1</li>
+			            <li>Tehnician 2</li>
+			            <li>Tehnician 3</li>
+	            	</ul>
+	            </div>
 	            <li>
             		<div class="dropdown companyTechs">
-					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu2" data-toggle="dropdown" aria-expanded="true">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="calgary" data-toggle="dropdown" aria-expanded="true">
 					    Calgary
 					    <span class="caret"></span>
 					  </button>
-					  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu2">
-						<li role="presentation"><a role="menuitem" tabindex="-1" href="#">Technician 1</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Technician 2</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Technician 3</a></li>
-					  </ul>
 					</div>
 	            </li>
+	            <div id="calgaryTechs">
+	            	<ul>
+			            <li>Tehnician 1</li>
+			            <li>Tehnician 2</li>
+			            <li>Tehnician 3</li>
+	            	</ul>
+	            </div>
 	            <li>
             		<div class="dropdown companyTechs">
-					  <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu3" data-toggle="dropdown" aria-expanded="true">
+					  <button class="btn btn-default dropdown-toggle" type="button" id="vancouver" data-toggle="dropdown" aria-expanded="true">
 					    Vancouver
 					    <span class="caret"></span>
 					  </button>
-					  <ul class="dropdown-menu" role="menu" aria-labelledby="dropdownMenu3">
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Technician 1</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Technician 2</a></li>
-					    <li role="presentation"><a role="menuitem" tabindex="-1" href="#">Technician 3</a></li>
-					  </ul>
 					</div>
 	            </li>
+	            <div id="vancouverTechs">
+		            <ul>
+			            <li>Tehnician 1</li>
+			            <li>Tehnician 2</li>
+			            <li>Tehnician 3</li>
+	            	</ul>
+	            </div>
 	        </ul>
 	    </div>
 
