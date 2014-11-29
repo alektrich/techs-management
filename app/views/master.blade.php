@@ -23,9 +23,9 @@
 
 	    	<!-- Collect the nav links, forms, and other content for toggling -->
 			<ul class="nav navbar-nav">
-	      		<li class="active navbar-link"><a href="#">Appliances</a></li>
-	      		<li class="navbar-link"><a href="#">Ducts</a></li>
-	      		<li class="navbar-link"><a href="#">Interlock</a></li>
+	      		<li class="active navbar-link" id="appliances"><a href="#">Appliances</a></li>
+	      		<li class="navbar-link" id="ducts"><a href="#">Ducts</a></li>
+	      		<li class="navbar-link" id="interlock"><a href="#">Interlock</a></li>
 	    	</ul> 
 	  	</div><!-- /.container-fluid -->
 	  <!-- Sidebar -->

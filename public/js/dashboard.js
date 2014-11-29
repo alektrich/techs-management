@@ -17,8 +17,6 @@ $(document).ready(function() {
 	$('button#toronto').clicktoggle(function() {
 
 		$('div#torontoTechs').slideDown();
-		$('div#calgaryTechs').slideUp();
-		$('div#vancouverTechs').slideUp();
 
 	},  function() {
 
@@ -29,8 +27,6 @@ $(document).ready(function() {
 	$('button#calgary').clicktoggle(function() {
 
 		$('div#calgaryTechs').slideDown();
-		$('div#torontoTechs').slideUp();
-		$('div#vancouverTechs').slideUp();
 
 	},  function() {
 
@@ -41,8 +37,6 @@ $(document).ready(function() {
 	$('button#vancouver').clicktoggle(function() {
 
 		$('div#vancouverTechs').slideDown();
-		$('div#torontoTechs').slideUp();
-		$('div#calgaryTechs').slideUp();
 
 	},  function() {
 
@@ -50,4 +44,11 @@ $(document).ready(function() {
 
 	});
 
+
+	$('li.navbar-link#appliances').on('click', function() {
+
+		$('div#torontoTechs').slideDown();
+		$('button#calgary, button#vancouver').attr('disabled', true);
+
+	});
 });
