@@ -1,8 +1,7 @@
 div.companyTechs {
 	margin-top: 10px;
 }
-
-div#torontoTechs, 
+ 
 div#calgaryTechs,
 div#vancouverTechs {
 	display: none;

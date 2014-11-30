@@ -1,1 +1,120 @@
 /*Add style for right side bar*/
+#right-wrapper {
+  padding-right: 250px;
+  transition: all 0.4s ease 0s;
+}
+
+#right-sidebar-wrapper {
+  margin-right: -250px;
+  right: 250px;
+  width: 195px;
+  /*background: grey;*/
+  position: fixed;
+  height: 100%;
+  overflow-y: auto;
+  z-index: 1000;
+  transition: all 0.4s ease 0s;
+  border-left: 1px solid lightgrey;
+}
+
+#right-page-content-wrapper {
+  width: 100%;
+}
+
+.right-sidebar-nav {
+  position: absolute;
+  top: 0;
+  width: 250px;
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  margin-top: 100px;
+}
+
+.right-sidebar-nav li {
+  line-height: 40px;
+  text-indent: 20px;
+}
+
+.right-sidebar-nav li a {
+  color: #999999;
+  display: block;
+  text-decoration: none;
+}
+
+.right-sidebar-nav li a:hover {
+  color: #fff;
+  background: rgba(255,255,255,0.2);
+  text-decoration: none;
+}
+
+.right-sidebar-nav li a:active,
+.sidebar-nav li a:focus {
+  text-decoration: none;
+}
+
+.right-sidebar-nav > .sidebar-brand {
+  height: 65px;
+  line-height: 60px;
+  font-size: 18px;
+}
+
+.right-sidebar-nav > .sidebar-brand a {
+  color: #999999;
+}
+
+.right-sidebar-nav > .sidebar-brand a:hover {
+  color: #fff;
+  background: none;
+}
+
+.right-content-header {
+  height: 65px;
+  line-height: 65px;
+}
+
+.right-content-header h1 {
+  margin: 0;
+  margin-left: 20px;
+  line-height: 65px;
+  display: inline-block;
+}
+
+#right-menu-toggle {
+  display: none;
+}
+
+.right-inset {
+  padding: 20px;
+}
+
+@media (max-width:767px) {
+
+    #right-wrapper {
+      padding-right: 0;
+    }
+
+    #right-sidebar-wrapper {
+      right: 0;
+    }
+
+    #right-wrapper.active {
+      position: relative;
+      right: 250px;
+    }
+
+    #right-wrapper.active #right-sidebar-wrapper {
+      right: 250px;
+      width: 250px;
+      transition: all 0.4s ease 0s;
+    }
+
+    #right-menu-toggle {
+      display: inline-block;
+    }
+
+    .right-inset {
+      padding: 15px;
+    }
+
+}

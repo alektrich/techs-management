@@ -12,7 +12,10 @@ $.fn.clicktoggle = function(a, b) {
     });
 };
 
+
 $(document).ready(function() {
+
+	$('button#calgary, button#vancouver').attr('disabled', true);
 
 	$('button#toronto').clicktoggle(function() {
 
@@ -48,7 +51,33 @@ $(document).ready(function() {
 	$('li.navbar-link#appliances').on('click', function() {
 
 		$('div#torontoTechs').slideDown();
-		$('button#calgary, button#vancouver').attr('disabled', true);
+		$('div#calgaryTechs').slideUp();
+		$('div#vancouverTechs').slideUp();
+		$('button#toronto').attr('disabled', false);
+		$('button#calgary').attr('disabled', true);
+		$('button#vancouver').attr('disabled', true);
+
+	});
+
+	$('li.navbar-link#ducts').on('click', function() {
+
+		$('div#calgaryTechs').slideDown();
+		$('div#torontoTechs').slideUp();
+		$('div#vancouverTechs').slideUp();
+		$('button#calgary').attr('disabled', false);
+		$('button#toronto').attr('disabled', true);
+		$('button#vancouver').attr('disabled', true);
+
+	});
+
+	$('li.navbar-link#interlock').on('click', function() {
+
+		$('div#vancouverTechs').slideDown();
+		$('div#calgaryTechs').slideUp();
+		$('div#torontoTechs').slideUp();
+		$('button#vancouver').attr('disabled', false);
+		$('button#toronto').attr('disabled', true);
+		$('button#calgary').attr('disabled', true);
 
 	});
 });

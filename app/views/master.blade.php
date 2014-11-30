@@ -29,6 +29,8 @@
 	    	</ul> 
 	  	</div><!-- /.container-fluid -->
 	  <!-- Sidebar -->
+	  <div class="container-fluid">
+
 	    <div id="sidebar-wrapper">
 	        <ul class="sidebar-nav">
 	            <li>
@@ -78,6 +80,17 @@
 	            </div>
 	        </ul>
 	    </div>
+	  </div>
+
+	  <div class="container-fluid">
+
+	    <div id="right-sidebar-wrapper">
+	        <ul class="right-sidebar-nav">
+	            <li>Advanced Options</li>
+	        </ul>
+	    </div>
+	  </div>
+
 
 </body>
 </html>
