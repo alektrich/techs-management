@@ -7,3 +7,7 @@ div#vancouverTechs {
 	display: none;
 } 
 
+nav.topbar {
+	margin-bottom: 0 !important;
+}
+

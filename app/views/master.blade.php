@@ -14,7 +14,7 @@
 <body>
 
 	<!-- Top navigation bar -->
-	<nav class="navbar navbar-default" role="navigation">
+	<nav class="navbar navbar-default topbar" role="navigation">
 	  	<div class="container-fluid">
 	    	<!-- Brand and toggle get grouped for better mobile display -->
 	    	<div class="navbar-header">
@@ -28,68 +28,91 @@
 	      		<li class="navbar-link" id="interlock"><a href="#">Interlock</a></li>
 	    	</ul> 
 	  	</div><!-- /.container-fluid -->
-	  <!-- Sidebar -->
-	  <div class="container-fluid">
+	</nav>  	
+	<div class="container">
+		<div class="row">
+		    <!-- Left Sidebar -->
+		    <div class="col-md-2">
 
-	    <div id="sidebar-wrapper">
-	        <ul class="sidebar-nav">
-	            <li>
-            		<div class="dropdown companyTechs">
-					  <button class="btn btn-default dropdown-toggle" type="button" id="toronto" data-toggle="dropdown" aria-expanded="true">
-					    Toronto
-					    <span class="caret"></span>
-					  </button>
-					</div>
-	            </li>
-	            <div id="torontoTechs">
-		            <ul>
-			            <li>Tehnician 1</li>
-			            <li>Tehnician 2</li>
-			            <li>Tehnician 3</li>
-	            	</ul>
-	            </div>
-	            <li>
-            		<div class="dropdown companyTechs">
-					  <button class="btn btn-default dropdown-toggle" type="button" id="calgary" data-toggle="dropdown" aria-expanded="true">
-					    Calgary
-					    <span class="caret"></span>
-					  </button>
-					</div>
-	            </li>
-	            <div id="calgaryTechs">
-	            	<ul>
-			            <li>Tehnician 1</li>
-			            <li>Tehnician 2</li>
-			            <li>Tehnician 3</li>
-	            	</ul>
-	            </div>
-	            <li>
-            		<div class="dropdown companyTechs">
-					  <button class="btn btn-default dropdown-toggle" type="button" id="vancouver" data-toggle="dropdown" aria-expanded="true">
-					    Vancouver
-					    <span class="caret"></span>
-					  </button>
-					</div>
-	            </li>
-	            <div id="vancouverTechs">
-		            <ul>
-			            <li>Tehnician 1</li>
-			            <li>Tehnician 2</li>
-			            <li>Tehnician 3</li>
-	            	</ul>
-	            </div>
-	        </ul>
-	    </div>
-	  </div>
+			  <div class="container-fluid">
+			    <div id="sidebar-wrapper">
+			        <ul class="sidebar-nav">
+			            <li>
+		            		<div class="dropdown companyTechs">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="toronto" data-toggle="dropdown" aria-expanded="true">
+							    Toronto
+							    <span class="caret"></span>
+							  </button>
+							</div>
+			            </li>
+			            <div id="torontoTechs">
+				            <ul>
+					            <li>Tehnician 1</li>
+					            <li>Tehnician 2</li>
+					            <li>Tehnician 3</li>
+			            	</ul>
+			            </div>
+			            <li>
+		            		<div class="dropdown companyTechs">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="calgary" data-toggle="dropdown" aria-expanded="true">
+							    Calgary
+							    <span class="caret"></span>
+							  </button>
+							</div>
+			            </li>
+			            <div id="calgaryTechs">
+			            	<ul>
+					            <li>Tehnician 1</li>
+					            <li>Tehnician 2</li>
+					            <li>Tehnician 3</li>
+			            	</ul>
+			            </div>
+			            <li>
+		            		<div class="dropdown companyTechs">
+							  <button class="btn btn-default dropdown-toggle" type="button" id="vancouver" data-toggle="dropdown" aria-expanded="true">
+							    Vancouver
+							    <span class="caret"></span>
+							  </button>
+							</div>
+			            </li>
+			            <div id="vancouverTechs">
+				            <ul>
+					            <li>Tehnician 1</li>
+					            <li>Tehnician 2</li>
+					            <li>Tehnician 3</li>
+			            	</ul>
+			            </div>
+			        </ul>
+			    </div>
+			  </div>
+		    </div>
+			<!-- /Left Sidebar -->
+			<!-- Central container -->
 
-	  <div class="container-fluid">
+		    <div class="col-md-8">
+		    	<h1>The details go here.</h1>
+		    	<h2>address bar</h2>
+		    	<h3>booking options</h3>
+		    	<h4>job details + map</h4>
+	        </div>
+			<!-- /Central container -->
 
-	    <div id="right-sidebar-wrapper">
-	        <ul class="right-sidebar-nav">
-	            <li>Advanced Options</li>
-	        </ul>
-	    </div>
-	  </div>
+			<!-- Right Sidebar -->
+			<div class="col-md-2">
+				<div class="container-fluid">
+
+				    <div id="right-sidebar-wrapper">
+				        <ul class="right-sidebar-nav">
+				            <li>Super Admin Options</li>
+				        </ul>
+				    </div>
+				</div>
+			</div>	
+			<!-- /Right sidebar -->
+			
+		</div>
+	</div>  	
+
 
 
 </body>
