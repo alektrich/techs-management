@@ -89,11 +89,27 @@
 			<!-- /Left Sidebar -->
 			<!-- Central container -->
 
-		    <div class="col-md-8">
-		    	<h1>The details go here.</h1>
-		    	<h2>address bar</h2>
-		    	<h3>booking options</h3>
-		    	<h4>job details + map</h4>
+		    <div class="col-md-8" id="jobSearchBar">
+		    	<div class="col-md-12">
+				    <div class="input-group">
+				      <input type="text" class="form-control" placeholder="Search Scheduled Jobs">
+				      <span class="input-group-btn">
+				        <button class="btn btn-default" type="button">Search</button>
+				      </span>
+				    </div><!-- /input-group -->
+				</div><!-- /.col-lg-6 -->
+				<div class="panel panel-default col-md-12 jobDetails">
+					  <div class="panel-heading"> #1 - Job in Toronto - Details will go below</div>
+					  <div class="panel-body">
+					    <iframe name="mapFrame" id="mapFrame"
+						  width="600"
+						  height="350"
+						  frameborder="0" style="border:0"
+						  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDpDBs668w-2HORB25aaEu-tSydv4wdeJQ
+						    &q=Toronto+ON">
+						</iframe>
+					  </div>
+				</div>
 	        </div>
 			<!-- /Central container -->
 

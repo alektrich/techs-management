@@ -56,6 +56,8 @@ $(document).ready(function() {
 		$('button#toronto').attr('disabled', false);
 		$('button#calgary').attr('disabled', true);
 		$('button#vancouver').attr('disabled', true);
+		$('#mapFrame').attr('src', 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDpDBs668w-2HORB25aaEu-tSydv4wdeJQ&q=Toronto+ON');
+		$('div.panel-heading').text('#1 - Job in Toronto - Details will go below');
 
 	});
 
@@ -67,6 +69,8 @@ $(document).ready(function() {
 		$('button#calgary').attr('disabled', false);
 		$('button#toronto').attr('disabled', true);
 		$('button#vancouver').attr('disabled', true);
+		$('#mapFrame').attr('src', 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDpDBs668w-2HORB25aaEu-tSydv4wdeJQ&q=Calgary+AB');
+		$('div.panel-heading').text('#1 - Job in Calgary - Details will go below');
 
 	});
 
@@ -78,6 +82,10 @@ $(document).ready(function() {
 		$('button#vancouver').attr('disabled', false);
 		$('button#toronto').attr('disabled', true);
 		$('button#calgary').attr('disabled', true);
+		$('#mapFrame').attr('src', 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDpDBs668w-2HORB25aaEu-tSydv4wdeJQ&q=Vancouver+BC');
+		$('div.panel-heading').text('#1 - Job in Vancouver - Details will go below');
 
 	});
+
+
 });

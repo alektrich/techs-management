@@ -11,3 +11,12 @@ nav.topbar {
 	margin-bottom: 0 !important;
 }
 
+div#jobSearchBar, div.jobDetails {
+	margin-top: 20px; 
+}
+
+div.jobDetails {
+	width: 90%;
+	margin-left: 30px;
+}
+
