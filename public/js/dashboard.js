@@ -15,77 +15,73 @@ $.fn.clicktoggle = function(a, b) {
 
 $(document).ready(function() {
 
-	$('button#calgary, button#vancouver').attr('disabled', true);
+	var otherCities = function(city) {
 
-	$('button#toronto').clicktoggle(function() {
+		if(city == 'toronto') {
+			city2 = 'calgary';
+			city3 = 'vancouver';
+		} else if (city == 'calgary') {
+			city2 = 'toronto';
+			city3 = 'vancouver';
+		} else {
+			city2 = 'calgary';
+			city3 = 'toronto';
+		}
 
-		$('div#torontoTechs').slideDown();
+		return [city2, city3];
 
-	},  function() {
+	}
 
-		$('div#torontoTechs').slideUp();	
+	var capitalize = function(string) {
 
-	});
+		return string.charAt(0).toUpperCase() + string.substring(1);
 
-	$('button#calgary').clicktoggle(function() {
+	}
 
-		$('div#calgaryTechs').slideDown();
+	var slideDown = function(city) {
 
-	},  function() {
+		var capitalizedCity = capitalize(city);
+		var mapSrc = $('#mapFrame').attr('src');
 
-		$('div#calgaryTechs').slideUp();	
+		$('div#' + city + 'Techs').slideDown(100);
+		$('div#' + otherCities(city)[0] + 'Techs').slideUp(100);
+		$('div#' + otherCities(city)[1] + 'Techs').slideUp(100);
 
-	});
+		if(mapSrc.indexOf(city) == -1) {
 
-	$('button#vancouver').clicktoggle(function() {
+			$('#mapFrame').attr('src', 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDpDBs668w-2HORB25aaEu-tSydv4wdeJQ&q=' + city);
 
-		$('div#vancouverTechs').slideDown();
+		}
 
-	},  function() {
+		$('div.panel-heading').text('#1 - Job in ' + capitalizedCity + ' - Details will go below');
 
-		$('div#vancouverTechs').slideUp();	
+	}
 
-	});
+	var slideUp = function(city) {
 
+		$('div#' + city + 'Techs').slideUp(100);
 
-	$('li.navbar-link#appliances').on('click', function() {
+	}
 
-		$('div#torontoTechs').slideDown();
-		$('div#calgaryTechs').slideUp();
-		$('div#vancouverTechs').slideUp();
-		$('button#toronto').attr('disabled', false);
-		$('button#calgary').attr('disabled', true);
-		$('button#vancouver').attr('disabled', true);
-		$('#mapFrame').attr('src', 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDpDBs668w-2HORB25aaEu-tSydv4wdeJQ&q=Toronto+ON');
-		$('div.panel-heading').text('#1 - Job in Toronto - Details will go below');
+	var switchCategory = function(category) {
 
-	});
+		$('h4#category').text(category);
 
-	$('li.navbar-link#ducts').on('click', function() {
+	}
 
-		$('div#calgaryTechs').slideDown();
-		$('div#torontoTechs').slideUp();
-		$('div#vancouverTechs').slideUp();
-		$('button#calgary').attr('disabled', false);
-		$('button#toronto').attr('disabled', true);
-		$('button#vancouver').attr('disabled', true);
-		$('#mapFrame').attr('src', 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDpDBs668w-2HORB25aaEu-tSydv4wdeJQ&q=Calgary+AB');
-		$('div.panel-heading').text('#1 - Job in Calgary - Details will go below');
+	$('button.cityDropDown').clicktoggle(function() {
 
-	});
+		slideDown($(this).attr('id'));
 
-	$('li.navbar-link#interlock').on('click', function() {
+	}, function() {
 
-		$('div#vancouverTechs').slideDown();
-		$('div#calgaryTechs').slideUp();
-		$('div#torontoTechs').slideUp();
-		$('button#vancouver').attr('disabled', false);
-		$('button#toronto').attr('disabled', true);
-		$('button#calgary').attr('disabled', true);
-		$('#mapFrame').attr('src', 'https://www.google.com/maps/embed/v1/place?key=AIzaSyDpDBs668w-2HORB25aaEu-tSydv4wdeJQ&q=Vancouver+BC');
-		$('div.panel-heading').text('#1 - Job in Vancouver - Details will go below');
+		slideUp($(this).attr('id'));
 
 	});
 
+	$('li.navbar-link').on('click', function() {
 
+		switchCategory($(this).text());
+
+	});
 });

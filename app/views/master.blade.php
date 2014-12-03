@@ -14,7 +14,7 @@
 <body>
 
 	<!-- Top navigation bar -->
-	<nav class="navbar navbar-default topbar" role="navigation">
+	<nav class="navbar navbar-inverse topbar" role="navigation">
 	  	<div class="container-fluid">
 	    	<!-- Brand and toggle get grouped for better mobile display -->
 	    	<div class="navbar-header">
@@ -36,10 +36,11 @@
 
 			  <div class="container-fluid">
 			    <div id="sidebar-wrapper">
+				    <h4 id="category">Appliances</h4>
 			        <ul class="sidebar-nav">
 			            <li>
 		            		<div class="dropdown companyTechs">
-							  <button class="btn btn-default dropdown-toggle" type="button" id="toronto" data-toggle="dropdown" aria-expanded="true">
+							  <button class="btn btn-info cityDropDown" type="button" id="toronto" data-toggle="dropdown" aria-expanded="true">
 							    Toronto
 							    <span class="caret"></span>
 							  </button>
@@ -54,7 +55,7 @@
 			            </div>
 			            <li>
 		            		<div class="dropdown companyTechs">
-							  <button class="btn btn-default dropdown-toggle" type="button" id="calgary" data-toggle="dropdown" aria-expanded="true">
+							  <button class="btn btn-info cityDropDown" type="button" id="calgary" data-toggle="dropdown" aria-expanded="true">
 							    Calgary
 							    <span class="caret"></span>
 							  </button>
@@ -69,7 +70,7 @@
 			            </div>
 			            <li>
 		            		<div class="dropdown companyTechs">
-							  <button class="btn btn-default dropdown-toggle" type="button" id="vancouver" data-toggle="dropdown" aria-expanded="true">
+							  <button class="btn btn-info cityDropDown" type="button" id="vancouver" data-toggle="dropdown" aria-expanded="true">
 							    Vancouver
 							    <span class="caret"></span>
 							  </button>
@@ -94,7 +95,7 @@
 				    <div class="input-group">
 				      <input type="text" class="form-control" placeholder="Search Scheduled Jobs">
 				      <span class="input-group-btn">
-				        <button class="btn btn-default" type="button">Search</button>
+				        <button class="btn btn-success" type="button">Search</button>
 				      </span>
 				    </div><!-- /input-group -->
 				</div><!-- /.col-lg-6 -->
@@ -106,7 +107,7 @@
 						  height="350"
 						  frameborder="0" style="border:0"
 						  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDpDBs668w-2HORB25aaEu-tSydv4wdeJQ
-						    &q=Toronto+ON">
+						    &q=Toronto">
 						</iframe>
 					  </div>
 				</div>
