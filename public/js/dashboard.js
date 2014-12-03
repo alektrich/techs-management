@@ -38,14 +38,14 @@ $(document).ready(function() {
 
 	}
 
-	var slideDown = function(city) {
+	var colapseDown = function(city, speed) {
 
 		var capitalizedCity = capitalize(city);
 		var mapSrc = $('#mapFrame').attr('src');
 
-		$('div#' + city + 'Techs').slideDown(100);
-		$('div#' + otherCities(city)[0] + 'Techs').slideUp(100);
-		$('div#' + otherCities(city)[1] + 'Techs').slideUp(100);
+		$('div#' + city + 'Techs').slideDown(speed);
+		$('div#' + otherCities(city)[0] + 'Techs').slideUp(speed);
+		$('div#' + otherCities(city)[1] + 'Techs').slideUp(speed);
 
 		if(mapSrc.indexOf(city) == -1) {
 
@@ -57,9 +57,9 @@ $(document).ready(function() {
 
 	}
 
-	var slideUp = function(city) {
+	var colapseUp = function(city, speed) {
 
-		$('div#' + city + 'Techs').slideUp(100);
+		$('div#' + city + 'Techs').slideUp(speed);
 
 	}
 
@@ -71,11 +71,11 @@ $(document).ready(function() {
 
 	$('button.cityDropDown').clicktoggle(function() {
 
-		slideDown($(this).attr('id'));
+		colapseDown($(this).attr('id'), 200);
 
 	}, function() {
 
-		slideUp($(this).attr('id'));
+		colapseUp($(this).attr('id'), 200);
 
 	});
 
