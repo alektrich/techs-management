@@ -69,13 +69,19 @@ $(document).ready(function() {
 
 	}
 
-	$('button.cityDropDown').clicktoggle(function() {
+	/*$('button.cityDropDown').clicktoggle(function() {
 
 		colapseDown($(this).attr('id'), 200);
 
 	}, function() {
 
 		colapseUp($(this).attr('id'), 200);
+
+	});*/
+
+	$('button.cityDropDown').click(function() {
+		
+		colapseDown($(this).attr('id'), 200);
 
 	});
 

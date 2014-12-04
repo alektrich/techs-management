@@ -46,7 +46,7 @@
 									  </button>
 									</div>
 					            </li>
-					            <div id="torontoTechs">
+					            <div id="torontoTechs" class="techsList">
 						            <ul>
 							            <li>Tehnician 1</li>
 							            <li>Tehnician 2</li>
@@ -61,7 +61,7 @@
 									  </button>
 									</div>
 					            </li>
-					            <div id="calgaryTechs">
+					            <div id="calgaryTechs" class="techsList">
 					            	<ul>
 							            <li>Tehnician 1</li>
 							            <li>Tehnician 2</li>
@@ -76,7 +76,7 @@
 									  </button>
 									</div>
 					            </li>
-					            <div id="vancouverTechs">
+					            <div id="vancouverTechs" class="techsList">
 						            <ul>
 							            <li>Tehnician 1</li>
 							            <li>Tehnician 2</li>
