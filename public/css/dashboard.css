@@ -1,10 +1,5 @@
 div.companyTechs {
 	margin-top: 10px;
-}
- 
-div#calgaryTechs,
-div#vancouverTechs {
-	display: none;
 } 
 
 nav.topbar {
@@ -18,8 +13,4 @@ div#jobSearchBar, div.jobDetails {
 div.jobDetails {
 	width: 90%;
 	margin-left: 30px;
-}	
-
-h4#category {
-	margin: 20px 0 0 20px;
 }
