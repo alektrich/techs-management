@@ -26,6 +26,28 @@
 		      		<li class="navbar-link" id="ducts"><a href="#">Ducts</a></li>
 		      		<li class="navbar-link" id="interlock"><a href="#">Interlock</a></li>
 		    	</ul> 
+		    	<ul class="nav navbar-nav navbar-right">
+		    		<li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Account <span class="caret"></span></a>
+			          <ul class="dropdown-menu" role="menu">
+			            <li><a href="#">Info</a></li>
+			            <li><a href="#">Tutorial</a></li>
+			            <li><a href="#">Settings</a></li>
+			            <li class="divider"></li>
+			            <li><a href="#">Logout</a></li>
+			          </ul>
+			        </li>
+			        <li class="dropdown">
+			          <a href="#" class="dropdown-toggle" data-toggle="dropdown" role="button" aria-expanded="false">Settings <span class="caret"></span></a>
+			          <ul class="dropdown-menu" role="menu">
+			            <li><a href="#">Schedule Job</a></li>
+			            <li><a href="#">Sort Jobs</a></li>
+			            <li><a href="#">Remove Job</a></li>
+			            <li class="divider"></li>
+			            <li><a href="#">Insert Note</a></li>
+			          </ul>
+			        </li>
+			    </ul>
 		  	</div><!-- /.container-fluid -->
 		</nav>  	
 		<div class="container">
