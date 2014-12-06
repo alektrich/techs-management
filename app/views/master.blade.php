@@ -4,7 +4,6 @@
 		<title>Dashboard</title>
 		{{ HTML::style('css/bootstrap/bootstrap.min.css') }}
 		{{ HTML::style('css/left-sidebar.css') }}
-		{{ HTML::style('css/right-sidebar.css') }}
 		{{ HTML::style('css/dashboard.css') }}
 		{{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js') }}
 		{{ HTML::script('js/bootstrap/bootstrap.min.js') }}
@@ -18,7 +17,7 @@
 		  	<div class="container-fluid">
 		    	<!-- Brand and toggle get grouped for better mobile display -->
 		    	<div class="navbar-header">
-		      		<a class="navbar-brand" href="{{URL::to('/')}}">Tehnicians Manager</a>
+		      		<a class="navbar-brand" href="{{URL::to('/')}}">Qfix Tech Manager</a>
 		    	</div>
 
 		    	<!-- Collect the nav links, forms, and other content for toggling -->
@@ -88,44 +87,10 @@
 					</div>
 			    </div>
 				<!-- /Left Sidebar -->
+
 				<!-- Central container -->
-
-			    <div class="col-md-8" id="jobSearchBar">
-			    	<div class="col-md-12">
-					    <div class="input-group">
-					      	<input type="text" class="form-control" placeholder="Search Scheduled Jobs">
-					      	<span class="input-group-btn">
-					        	<button class="btn btn-success" type="button">Search</button>
-					      	</span>
-					    </div><!-- /input-group -->
-					</div><!-- /.col-lg-6 -->
-					<div class="panel panel-default col-md-12 jobDetails">
-					  	<div class="panel-heading"> #1 - Job in Toronto - Details will go below</div>
-					  	<div class="panel-body">
-						    <iframe name="mapFrame" id="mapFrame"
-							  width="600"
-							  height="350"
-							  frameborder="0" style="border:0"
-							  src="https://www.google.com/maps/embed/v1/place?key=AIzaSyDpDBs668w-2HORB25aaEu-tSydv4wdeJQ
-							    &q=Toronto">
-							</iframe>
-					  	</div>
-					</div>
-		        </div>
+				@yield('content')
 				<!-- /Central container -->
-
-				<!-- Right Sidebar -->
-				<div class="col-md-2">
-					<div class="container-fluid">
-
-					    <div id="right-sidebar-wrapper">
-					        <ul class="right-sidebar-nav">
-					            <li>Super Admin Options</li>
-					        </ul>
-					    </div>
-					</div>
-				</div>	
-				<!-- /Right sidebar -->
 				
 			</div>
 		</div>  	

@@ -4,13 +4,31 @@ div.companyTechs {
 
 nav.topbar {
 	margin-bottom: 0 !important;
+	border-radius: 0 !important;
+	position: static;
 }
 
 div#jobSearchBar, div.jobDetails {
-	margin-top: 20px; 
+	margin-top: 10px; 
 }
 
 div.jobDetails {
-	width: 90%;
-	margin-left: 30px;
+	width: 155%;
+	margin-left: -120px;
+	margin-top: 45px;
+	/*bottom: 0;*/
+
 }
+
+body {
+ 	font-family: Calibri;
+}
+
+div#iframeBody {
+	padding: 0 !important;
+}
+
+div.searchBar {
+	left: -135px;
+}
+
