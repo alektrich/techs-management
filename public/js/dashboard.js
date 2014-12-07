@@ -1,4 +1,7 @@
+
+
 $(document).ready(function() {
+
 
 	var otherCities = function(city) {
 
@@ -28,9 +31,9 @@ $(document).ready(function() {
 		var capitalizedCity = capitalize(city);
 		var mapSrc = $('#mapFrame').attr('src');
 
-		$('div#' + city + 'Techs').slideDown(speed);
-		$('div#' + otherCities(city)[0] + 'Techs').slideUp(speed);
-		$('div#' + otherCities(city)[1] + 'Techs').slideUp(speed);
+		$('div.' + city + 'Techs').slideDown(speed);
+		$('div.' + otherCities(city)[0] + 'Techs').slideUp(speed);
+		$('div.' + otherCities(city)[1] + 'Techs').slideUp(speed);
 
 		if(mapSrc.indexOf(city) == -1) {
 
@@ -38,7 +41,7 @@ $(document).ready(function() {
 
 		}
 
-		$('div.panel-heading').text('#1 - Job in ' + capitalizedCity + ' - Details will go below');
+		$('div#iframeHead h4').text('#1 - Job in ' + capitalizedCity + ' - Details will go below');
 
 	}
 
@@ -56,7 +59,7 @@ $(document).ready(function() {
 
 	$('button.cityDropDown').click(function() {
 		
-		colapseDown($(this).attr('id'), 200);
+		colapseDown($(this).attr('id'), 100);
 
 	});
 
@@ -65,4 +68,26 @@ $(document).ready(function() {
 		switchCategory($(this).text());
 
 	});
+
+	var mapResponsive = function() {
+		var topBarHeight = $('div.topBarContainer').height();
+		var sideBarWidthMod = $('ul.side-nav').width();
+		var jobDetailsHeight = $('div#iframeHead').height();
+		
+		if(sideBarWidthMod != 0) {
+			var racio = (1 - ((window.outerHeight - topBarHeight - jobDetailsHeight) / (window.outerWidth - sideBarWidthMod + 10))) * 100;
+		} else {
+			var racio = (1 - ((window.outerHeight - topBarHeight - jobDetailsHeight) / (window.outerWidth))) * 100;
+		}
+		var percentage = racio + '%';
+		$('#iframeBody').css('padding-bottom', percentage);
+	}
+
+	mapResponsive();
+
+	$(window).resize(function() {
+		mapResponsive();
+	});
+
+
 });
