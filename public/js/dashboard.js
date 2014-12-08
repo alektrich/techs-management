@@ -41,7 +41,7 @@ $(document).ready(function() {
 
 		}
 
-		$('div#iframeHead h4').text('#1 - Job in ' + capitalizedCity + ' - Details will go below');
+		$('div#iframeHead h3').text('#1 - Job in ' + capitalizedCity);
 
 	}
 
@@ -70,17 +70,24 @@ $(document).ready(function() {
 	});
 
 	var mapResponsive = function() {
-		var topBarHeight = $('div.topBarContainer').height();
-		var sideBarWidthMod = $('ul.side-nav').width();
+		var topBarHeight = $('nav.topBarNav').height();
+		// alert(window.outerHeight);
+		// var sideBarWidthMod = $('ul.side-nav').width();
 		var jobDetailsHeight = $('div#iframeHead').height();
 		
-		if(sideBarWidthMod != 0) {
+		/*if(sideBarWidthMod != 0) {
 			var racio = (1 - ((window.outerHeight - topBarHeight - jobDetailsHeight) / (window.outerWidth - sideBarWidthMod + 10))) * 100;
 		} else {
 			var racio = (1 - ((window.outerHeight - topBarHeight - jobDetailsHeight) / (window.outerWidth))) * 100;
 		}
 		var percentage = racio + '%';
-		$('#iframeBody').css('padding-bottom', percentage);
+		$('#iframeBody').css('padding-bottom', percentage);*/
+		// var mapWidth = (window.outerWidth - sideBarWidthMod - 20);
+		var mapHeight = (window.outerHeight - topBarHeight - jobDetailsHeight - 81);
+		// alert(mapHeight);
+		// $('div#iframeBody').width(mapWidth);
+		$('div#iframeBody').css('height', mapHeight);
+
 	}
 
 	mapResponsive();

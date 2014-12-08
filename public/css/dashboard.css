@@ -174,19 +174,19 @@ li.techs {
 }
 
 div#iframeHead {
-	height: 50px;
+	height: 100%;
+    margin-bottom: 10px !important;
 }
 
-div#iframeHead h4 {
-	margin: 10px;
+div#iframeHead h3, div#iframeHead span {
+    margin: 10px;
+    /*height: 100%;*/
+    position: relative;
 }
 
 div#iframeBody  {
 	position: relative;
-    /*padding-bottom: 45.58%; // This is the aspect ratio*/
-    height: 0;
     overflow: hidden;
-
 }
 
 div#iframeBody iframe {
