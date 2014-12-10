@@ -13,5 +13,11 @@
 
 Route::get('/', function()
 {
-	return View::make('jobs');
+	return View::make('users.login');
 });
+
+Route::get('register', 'UsersController@register');
+Route::get('login', array('as' => 'login', 'uses' => 'UsersController@login'));
+Route::get('profile/{id}', 'UsersController@show');
+Route::get('edit/{id}', 'UsersController@edit');
+Route::get('delete/{id}', 'UsersController@delete');
