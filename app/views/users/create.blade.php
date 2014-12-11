@@ -2,8 +2,8 @@
 @section('body')
 <div class="row">
     <div class="col-md-4 col-md-offset-4">
-        <h2>Register here</h2>
-        {{ Form::open(array('method' => 'post')) }}
+        <h2>Register</h2>
+        {{ Form::open(array('route' => array('user.store'), 'method' => 'post')) }}
         <div class="form-group">
             {{Form::label('name','Name')}}
             {{Form::text('name', null,array('class' => 'form-control'))}}

@@ -12,15 +12,66 @@ class UsersController extends \BaseController {
 		return View::make('users.login');
 	}
 
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function handleLogin()
+	{
+		// Login user
+		$data = Input::only(['email', 'password']);
+
+        if(Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
+            return Redirect::to('jobs');
+        }
+
+        return Redirect::route('login')->withInput();
+	}
+
+	/**
+	 * Display a listing of the resource.
+	 *
+	 * @return Response
+	 */
+	public function logout()
+	{
+		if(Auth::check()){
+		  Auth::logout();
+		}
+		return Redirect::route('login');
+	}
+
 
 	/**
 	 * Show the form for creating a new resource.
 	 *
 	 * @return Response
 	 */
-	public function register()
+	public function create()
 	{
 		return View::make('users.create');
+	}
+
+	/**
+	 * Store new users data.
+	 *
+	 * @return Response
+	 */
+	public function store()
+	{
+		// Save new user
+
+		$data = Input::all();
+		$data['group'] = 1; // Tehnician by default
+		dd($data);
+        $newUser = User::create($data);
+        if($newUser){
+            Auth::login($newUser);
+            return Redirect::route('jobs');
+        }
+
+        return Redirect::route('user.create')->withInput();
 	}
 
 

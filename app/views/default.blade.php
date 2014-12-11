@@ -32,7 +32,7 @@
                         <li><a href="/profile">{{ Auth::user()->first_name }}</a></li>
                         @else
                         <li><a href="/login">Login</a></li>
-                        <li><a href="/register">Sign Up</a></li>
+                        <li><a href="user/create">Sign Up</a></li>
                         @endif
                     </ul>
 

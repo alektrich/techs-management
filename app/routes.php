@@ -16,8 +16,18 @@ Route::get('/', function()
 	return View::make('users.login');
 });
 
-Route::get('register', 'UsersController@register');
+Route::get('jobs', function()
+{
+	return View::make('jobs');
+});
+
+Route::resource('user', 'UsersController');
+
+// Route::get('register', 'UsersController@create');
+
 Route::get('login', array('as' => 'login', 'uses' => 'UsersController@login'));
+Route::post('/login', array('as' => 'login', 'uses' => 'UsersController@handleLogin'));
+
 Route::get('profile/{id}', 'UsersController@show');
 Route::get('edit/{id}', 'UsersController@edit');
 Route::get('delete/{id}', 'UsersController@delete');
