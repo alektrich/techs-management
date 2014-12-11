@@ -13,7 +13,7 @@
 
 Route::get('/', function()
 {
-	return View::make('users.login');
+	return Redirect::to('login');
 });
 
 Route::get('jobs', function()
@@ -26,6 +26,7 @@ Route::resource('user', 'UsersController');
 // Route::get('register', 'UsersController@create');
 
 Route::get('login', array('as' => 'login', 'uses' => 'UsersController@login'));
+Route::get('logout', array('as' => 'logout', 'uses' => 'UsersController@logout'));
 Route::post('/login', array('as' => 'login', 'uses' => 'UsersController@handleLogin'));
 
 Route::get('profile/{id}', 'UsersController@show');

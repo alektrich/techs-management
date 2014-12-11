@@ -51,6 +51,13 @@
             </div>
         </div>
     </div>
+    @foreach ($errors->all() as $message)
+        <div class="row">
+          <div class="col-md-4 col-md-offset-4">
+            {{$message}}
+          </div>
+        </div>  
+    @endforeach
     @yield('body')
 </div>
 {{HTML::script('http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.1/jquery.min.js')}}

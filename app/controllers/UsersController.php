@@ -9,7 +9,12 @@ class UsersController extends \BaseController {
 	 */
 	public function login()
 	{
-		return View::make('users.login');
+		if(Auth::check()) {
+			return Redirect::to('jobs');
+		} else {
+			return View::make('users.login');
+		}
+
 	}
 
 	/**
@@ -21,6 +26,17 @@ class UsersController extends \BaseController {
 	{
 		// Login user
 		$data = Input::only(['email', 'password']);
+		$validator = Validator::make(
+            $data,
+            [
+                'email' => 'required|email|min:8',
+                'password' => 'required',
+            ]
+        );
+
+        if($validator->fails()){
+            return Redirect::route('login')->withErrors($validator)->withInput();
+        }
 
         if(Auth::attempt(['email' => $data['email'], 'password' => $data['password']])) {
             return Redirect::to('jobs');
@@ -61,14 +77,36 @@ class UsersController extends \BaseController {
 	public function store()
 	{
 		// Save new user
+		$input = Input::all();
 
-		$data = Input::all();
-		$data['group'] = 1; // Tehnician by default
-		dd($data);
-        $newUser = User::create($data);
+		$validator = Validator::make(
+            $input,
+            [
+                'email' => 'required|email',
+                'name' 	=> 'required',
+                'password' => 'required|min:8',
+            ]
+        );
+
+        if($validator->fails()){
+            return Redirect::route('user.create')->withErrors($validator)->withInput();
+        }
+
+		
+		$data = Input::only(['email', 'name']);
+		$data['password'] = Hash::make(Input::get('password'));
+		$data['group'] = 1; // Tehnician will be by default
+
+        $newUser = new User;
+        $newUser->email = $data['email'];
+        $newUser->name = $data['name'];
+        $newUser->password = $data['password'];
+        $newUser->group = $data['group'];
+        $newUser->save();
+
         if($newUser){
             Auth::login($newUser);
-            return Redirect::route('jobs');
+            return Redirect::to('jobs');
         }
 
         return Redirect::route('user.create')->withInput();
