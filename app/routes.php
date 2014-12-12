@@ -13,8 +13,8 @@
 
 Route::get('/', function()
 {
-	return View::make('jobs');
-	// return Redirect::to('login');
+	// return View::make('jobs');
+	return Redirect::to('login');
 });
 
 Route::get('jobs', function()
