@@ -22,17 +22,17 @@
                         <span class="icon-bar"></span>
                         <span class="icon-bar"></span>
                     </button>
-                    <a class="navbar-brand" href="/">Qfix TM</a>
+                    <a class="navbar-brand" href="{{URL::to('/')}}">Qfix TM</a>
                 </div>
 
                 <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
                     <ul class="nav navbar-nav navbar-right">
                         @if (Auth::check())
-                        <li><a href="logout">Log Out</a></li>
+                        <li><a href="{{URL::to('logout')}}">Log Out</a></li>
                         <li><a href="#">{{ Auth::user()->name }}</a></li>
                         @else
-                        <li><a href="login">Login</a></li>
-                        <li><a href="user/create">Sign Up</a></li>
+                        <li><a href="{{URL::to('login')}}">Login</a></li>
+                        <li><a href="{{URL::to('user/create')}}">Sign Up</a></li>
                         @endif
                     </ul>
 
