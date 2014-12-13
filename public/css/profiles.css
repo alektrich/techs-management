@@ -1,0 +1,14 @@
+div.fullPage {
+    /*position: absolute;*/
+    height: 100%;
+    /*padding-bottom: 100%;*/
+}
+
+div.usersTable {
+	margin-top: 30px;
+	margin-bottom: 30px;
+}
+
+button.profilesButton {
+	margin-bottom: 50px;
+}

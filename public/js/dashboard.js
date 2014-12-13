@@ -96,5 +96,9 @@ $(document).ready(function() {
 		mapResponsive();
 	});
 
+	var paddingBottom = ($('div.fullPage').height()/window.innerHeight)*100 + '%';
+	alert(paddingBottom);
+	$('div.fullPage').css('padding-bottom', paddingBottom);
+
 
 });

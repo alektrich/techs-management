@@ -32,7 +32,7 @@
                         <li><a href="#">{{ Auth::user()->name }}</a></li>
                         @else
                         <li><a href="{{URL::to('login')}}">Login</a></li>
-                        <li><a href="{{URL::to('user/create')}}">Sign Up</a></li>
+                        <!-- <li><a href="{{URL::to('user/create')}}">Sign Up</a></li> -->
                         @endif
                     </ul>
 

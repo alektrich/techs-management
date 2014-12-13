@@ -4,6 +4,7 @@
 		<title>Dashboard</title>
 		{{ HTML::style('css/bootstrap/bootstrap.min.css') }}
 		{{ HTML::style('css/dashboard.css') }}
+		{{ HTML::style('css/profiles.css') }}
 		{{ HTML::style('css/font-awesome-4.1.0/css/font-awesome.min.css') }}
 		{{ HTML::script('//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js') }}
 		{{ HTML::script('js/bootstrap/bootstrap.min.js') }}

@@ -1,6 +1,6 @@
 <?php
 
-class UsersController extends \BaseController {
+class UsersController extends BaseController {
 
 	/**
 	 * Display a listing of the resource.
@@ -10,9 +10,13 @@ class UsersController extends \BaseController {
 	public function login()
 	{
 		if(Auth::check()) {
-			return Redirect::to('jobs');
+
+			return Redirect::to('profiles');
+
 		} else {
+
 			return View::make('users.login');
+			
 		}
 
 	}
@@ -58,6 +62,28 @@ class UsersController extends \BaseController {
 		return Redirect::route('login');
 	}
 
+	/**
+	 * Show the form for creating a new resource.
+	 *
+	 * @return Response
+	 */
+	public function profiles()
+	{
+
+		$users = User::all();
+		if(Auth::check() && $this->group(Auth::user()->id) === 1) {
+
+			return View::make('users.profiles', compact('users'));
+			// return 'success';
+
+		} else {
+
+			return 'You don\'t have permission to access this page. Go back to <a href="' . URL::to('login') . '">Dashboard</a>';
+
+		}
+
+	}
+
 
 	/**
 	 * Show the form for creating a new resource.
@@ -66,7 +92,8 @@ class UsersController extends \BaseController {
 	 */
 	public function create()
 	{
-		return View::make('users.create');
+		// return View::make('users.create');
+		return Redirect::route('login');
 	}
 
 	/**
@@ -77,6 +104,7 @@ class UsersController extends \BaseController {
 	public function store()
 	{
 		// Save new user
+		return false; // turning off for now
 		$input = Input::all();
 
 		$validator = Validator::make(
@@ -160,5 +188,15 @@ class UsersController extends \BaseController {
 		//
 	}
 
+	/**
+	 * Remove the specified resource from storage.
+	 *
+	 * @param  int  $id
+	 * @return Response
+	 */
+	public function group($id)
+	{
+		return User::find($id)->group;
+	}
 
 }
