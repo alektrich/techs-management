@@ -1,7 +1,7 @@
 <?php
 
-// $env = 'local';
-$env = 'staging';
+$env = 'local';
+// $env = 'staging';
 
 if($env == 'local') {
 	return array(
@@ -27,7 +27,7 @@ if($env == 'local') {
 			'mysql' => array(
 				'driver'    => 'mysql',
 				'host'      => 'localhost',
-				'database'  => 'techs',
+				'database'  => 'qfix',
 				'username'  => 'root',
 				'password'  => '',
 				'charset'   => 'utf8',

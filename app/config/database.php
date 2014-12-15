@@ -52,7 +52,7 @@ return array(
 			'prefix'   => '',
 		),
 
-		'mysql' => array(
+		/*'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => '80.179.36.207',
 			'database'  => 'qfix',
@@ -61,18 +61,18 @@ return array(
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
-		),
+		),*/
 
-		/*'mysql' => array(
+		'mysql' => array(
 			'driver'    => 'mysql',
 			'host'      => 'localhost',
-			'database'  => 'techs',
+			'database'  => 'qfix',
 			'username'  => 'root',
 			'password'  => '',
 			'charset'   => 'utf8',
 			'collation' => 'utf8_unicode_ci',
 			'prefix'    => '',
-		),*/
+		),
 
 		'pgsql' => array(
 			'driver'   => 'pgsql',

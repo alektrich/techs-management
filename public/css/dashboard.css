@@ -202,8 +202,3 @@ div.jobDetails {
 	padding-right: 0 !important;
 }
 
-div.fullPage {
-    /*position: absolute;*/
-    bottom: 0;
-    height: 100%;
-}
