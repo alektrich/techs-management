@@ -1,7 +1,5 @@
-div.fullPage {
-    /*position: absolute;*/
-    height: 100%;
-    /*padding-bottom: 100%;*/
+div.editUser {
+	margin-top: 20px;
 }
 
 div.usersTable {
@@ -11,4 +9,8 @@ div.usersTable {
 
 button.profilesButton {
 	margin-bottom: 50px;
+}
+
+.manageUsers {
+	cursor: pointer;
 }

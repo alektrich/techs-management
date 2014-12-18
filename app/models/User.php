@@ -26,13 +26,24 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 	protected $hidden = array('password', 'remember_token');
 
 	/**
-	 * Check user's group
+	 * Get users groups
 	 *
-	 * @return int
+	 * @return array
 	 */
-	public static function group() {
-		return $this;
-		// $this->pluck('group');
+	public static function getGroups() {
+		
+		$usersGroups = UsersGroup::all();
+
+		$groups = [];
+
+		foreach ($usersGroups as $group) {
+
+			$groups[$group->id] = $group->name;
+
+		}
+
+		return $groups;
+
 	}
 
 }

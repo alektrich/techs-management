@@ -2,6 +2,12 @@
 
 class UsersController extends BaseController {
 
+	public function __construct() {
+
+		$this->beforeFilter('auth', array('except' => array('login', 'handleLogin')));
+		$this->beforeFilter('super.admin', array('except' => array('login', 'handleLogin', 'logout')));
+	}
+
 	/**
 	 * Display a listing of the resource.
 	 *
@@ -71,23 +77,9 @@ class UsersController extends BaseController {
 	{
 
 		$users = User::all();
-		$usersGroups = UsersGroup::all();
+		$groups = User::getGroups();
 
-		$groups = [];
-		foreach ($usersGroups as $group) {
-			$groups[$group->id] = $group->name;
-		}
-
-		if(Auth::check() && $this->group(Auth::user()->id) === 1) {
-
-			return View::make('users.profiles', compact('users', 'groups'));
-			// return 'success';
-
-		} else {
-
-			return 'You don\'t have permission to access this page. Go back to <a href="' . URL::to('login') . '">Dashboard</a>';
-
-		}
+		return View::make('users.profiles', compact('users', 'groups'));
 
 	}
 
@@ -99,8 +91,9 @@ class UsersController extends BaseController {
 	 */
 	public function create()
 	{
-		// return View::make('users.create');
+
 		return Redirect::route('login');
+
 	}
 
 	/**
@@ -125,7 +118,7 @@ class UsersController extends BaseController {
         );
 
         if($validator->fails()){
-            return Redirect::route('profiles')->withErrors($validator)->withInput();
+            return Redirect::to('profiles')->withErrors($validator)->withInput();
         }
 
 		
@@ -143,7 +136,7 @@ class UsersController extends BaseController {
             return Redirect::to('profiles');
         }
 
-        return Redirect::route('profiles')->withInput();
+        return Redirect::to('profiles')->withInput();
 	}
 
 
@@ -167,7 +160,18 @@ class UsersController extends BaseController {
 	 */
 	public function edit($id)
 	{
-		//
+		// 
+		$user = User::find($id);
+
+		$this->data['id'] = $id;
+		$this->data['name'] = $user->name;
+		$this->data['email'] = $user->email;
+		$this->data['group'] = $user->group;
+		$usersGroups = UsersGroup::all();
+
+		$this->data['groups'] = User::getGroups();
+
+		return View::make('users.edit', $this->data);
 	}
 
 
@@ -180,6 +184,35 @@ class UsersController extends BaseController {
 	public function update($id)
 	{
 		//
+		$input = Input::all();
+
+		$validator = Validator::make(
+            $input,
+            [
+                'email' => 'required|email',
+                'name' 	=> 'required',
+                'password' => 'min:8',
+                'group' => 'required'
+            ]
+        );
+
+        if($validator->fails()){
+            return Redirect::route('profiles')->withErrors($validator)->withInput();
+        }
+
+		
+		$data = Input::only(['email', 'name', 'group']);
+		$data['password'] = Hash::make(Input::get('password'));
+
+        $updateUser = User::find($id);
+        $updateUser->email = $data['email'];
+        $updateUser->name = $data['name'];
+        $updateUser->password = $data['password'];
+        $updateUser->group = $data['group'];
+        $updateUser->save();
+
+        return Redirect::to('profiles');
+
 	}
 
 
@@ -192,17 +225,8 @@ class UsersController extends BaseController {
 	public function destroy($id)
 	{
 		//
-	}
-
-	/**
-	 * Remove the specified resource from storage.
-	 *
-	 * @param  int  $id
-	 * @return Response
-	 */
-	public function group($id)
-	{
-		return User::find($id)->group;
+		User::find($id)->delete();
+		return Redirect::to('profiles');
 	}
 
 }

@@ -12,13 +12,12 @@
 */
 
 Route::get('/', function()
-{
-	// return View::make('jobs');
+{	
 	return Redirect::to('login');
 });
 
 Route::get('jobs', function()
-{
+{	
 	return View::make('jobs');
 });
 
@@ -31,6 +30,3 @@ Route::get('logout', array('as' => 'logout', 'uses' => 'UsersController@logout')
 Route::post('/login', array('as' => 'login', 'uses' => 'UsersController@handleLogin'));
 
 Route::get('profiles', 'UsersController@profiles');
-Route::get('profile/{id}', 'UsersController@show');
-Route::get('edit/{id}', 'UsersController@edit');
-Route::get('delete/{id}', 'UsersController@delete');

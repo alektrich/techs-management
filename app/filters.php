@@ -88,3 +88,11 @@ Route::filter('csrf', function()
 		throw new Illuminate\Session\TokenMismatchException;
 	}
 });
+
+Route::filter('super.admin', function()
+{
+	if(Auth::user()->group !== 1) {
+		// return 'You don\'t have permission to access this page. Go back to <a href="' . URL::to('login') . '">Dashboard</a>';
+		return Redirect::to('jobs');
+	}
+});
