@@ -6,6 +6,7 @@ class UsersController extends BaseController {
 
 		$this->beforeFilter('auth', array('except' => array('login', 'handleLogin')));
 		$this->beforeFilter('super.admin', array('except' => array('login', 'handleLogin', 'logout')));
+		$this->beforeFilter('csrf', array('on' => 'post'));
 	}
 
 	/**
