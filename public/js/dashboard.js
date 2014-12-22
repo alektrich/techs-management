@@ -95,7 +95,9 @@ $(document).ready(function() {
 	$(window).resize(function() {
 		mapResponsive();
 	});
-	var paddingBottom = ($('div.fullPage').height()/window.outerHeight)*100 + '%';
+	/*alert($('div.fullPage').height());
+	alert(window.outerHeight);*/
+	var paddingBottom = (1 - ($('div.fullPage').height()/window.outerHeight))*100 + '%';
 	$('div.fullPage').css('padding-bottom', paddingBottom);
 
 

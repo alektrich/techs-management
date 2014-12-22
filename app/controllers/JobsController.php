@@ -10,7 +10,8 @@ class JobsController extends \BaseController {
 	public function index()
 	{
 		//
-		return View::make('jobs.index');
+		$jobs = Job::all();
+		return View::make('jobs.index', compact('jobs'));
 	}
 
 
