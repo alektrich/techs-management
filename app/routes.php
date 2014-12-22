@@ -16,12 +16,13 @@ Route::get('/', function()
 	return Redirect::to('login');
 });
 
-Route::get('jobs', function()
+/*Route::get('jobs', function()
 {	
 	return View::make('jobs');
-});
+});*/
 
 Route::resource('user', 'UsersController');
+Route::resource('jobs', 'JobsController');
 
 // Route::get('register', 'UsersController@create');
 
