@@ -55,7 +55,7 @@
 	      </div>
 	      <div class="modal-body">
 	        <div class="row">
-			    <div class="col-md-4 col-md-offset-4">
+			    <div class="col-md-8 col-md-offset-2">
 			        {{ Form::open(array('route' => array('user.store'), 'method' => 'post')) }}
 			        <div class="form-group">
 			            {{Form::label('name','Name')}}

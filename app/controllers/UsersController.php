@@ -77,7 +77,7 @@ class UsersController extends BaseController {
 	public function profiles()
 	{
 
-		$users = User::all();
+		$users  = User::all();
 		$groups = User::getGroups();
 
 		return View::make('users.profiles', compact('users', 'groups'));

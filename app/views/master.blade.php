@@ -39,15 +39,10 @@
 				          </ul>
 				        </li>
 				        <li class="dropdown">
+				          <a href="{{ URL::to('profiles') }}" class="dropdown-toggle">Manage Users</a>
+				        </li>
+				        <li class="dropdown">
 				          <a href="{{ URL::to('jobs') }}" class="dropdown-toggle">Jobs</a>
-				          <!-- <ul class="dropdown-menu" role="menu">
-				            <li><a href="#">Schedule New Job</a></li>
-				            <li><a href="#">Edit Jobs</a></li>
-				            <li><a href="#">Sort Jobs</a></li>
-				            <li><a href="#">Remove Jobs</a></li>
-				            <li class="divider"></li>
-				            <li><a href="#">Insert Note</a></li>
-				          </ul> -->
 				        </li>
 				    </ul>
 			  	</div><!-- /.container-fluid -->

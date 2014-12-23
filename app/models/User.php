@@ -46,4 +46,24 @@ class User extends Eloquent implements UserInterface, RemindableInterface {
 
 	}
 
+	/**
+	 * Get users groups
+	 *
+	 * @return array
+	 */
+	public static function getTechnicians() {
+		
+		$technicians = User::whereGroup(5)->get();
+		$data = [];
+		
+		if(!empty($technicians)) {
+			foreach ($technicians as $technician) {
+				$data[$technician->id] = $technician->name;		
+			}
+		}
+
+		return $data;
+
+	}
+
 }

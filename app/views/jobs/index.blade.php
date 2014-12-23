@@ -53,14 +53,18 @@
 	      </div>
 	      <div class="modal-body">
 	        <div class="row">
-			    <div class="col-md-4 col-md-offset-4">
-			        {{ Form::open(array('route' => array('job.store'), 'method' => 'post')) }}
+			    <div class="col-md-8 col-md-offset-2">
+			        {{ Form::open(array('route' => array('jobs.store'), 'method' => 'post')) }}
 			        <div class="form-group">
 			            {{Form::label('title','Title')}}
 			            {{Form::text('title', null,array('class' => 'form-control'))}}
 			        </div>
+			        <div class="form-group">
+			            {{Form::label('description','Description')}}
+			            {{Form::textarea('description', null,array('class' => 'form-control'))}}
+			        </div>
 			         <div class="form-group">
-			            {{Form::label('category','Level')}}
+			            {{Form::label('category','Category')}}
 			            {{Form::select('category', $categories, array('class' => 'form-control'))}}
 			        </div>
 			        <div class="form-group">
@@ -72,7 +76,7 @@
 			            {{Form::select('location', $locations, array('class' => 'form-control'))}}
 			        </div>
 			        <div class="form-group">
-			            {{Form::label('priority','Location')}}
+			            {{Form::label('priority','Priority')}}
 			            {{Form::select('priority', $priorities, array('class' => 'form-control'))}}
 			        </div>
 			        

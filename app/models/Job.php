@@ -11,23 +11,15 @@ class Job extends Eloquent {
 
 	/**
 	 * Get all data needed for creating a job 
-	 *
+	 * @return array
 	 */
 	public static function getData() 
 	{
-
-		$jobs = static::all();
-		$technicians = User::getTechicians();
-		$locations = Location::all();
-		$categories = Category::all();
-		
-		return array(
-			'jobs' => $jobs,
-			'technicians' => $technicians,
-			'locations' => $locations,
-			'categories' => $categories
-		);
-
+		return ['jobs' 		  => static::all(),
+				'technicians' => User::getTechnicians(),
+				'locations'   => Location::all()->lists('location'),
+				'categories'  => Category::all()->lists('name'),
+				'priorities'  => Priority::all()->lists('priority')];
 	}
 
 }
