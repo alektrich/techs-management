@@ -74,6 +74,7 @@ class JobsController extends \BaseController {
 	public function show($id)
 	{
 		//
+		
 		$job = Job::find($id);
 		return View::make('jobs.show', compact('job'));
 	}
@@ -88,7 +89,9 @@ class JobsController extends \BaseController {
 	public function edit($id)
 	{
 		//
-		return View::make('jobs.edit');
+		$data = Job::getData();
+		$job = Job::find($id);
+		return View::make('jobs.edit', compact('job', 'data'));
 	}
 
 
@@ -101,6 +104,7 @@ class JobsController extends \BaseController {
 	public function update($id)
 	{
 		//
+		dd(Input::all());
 	}
 
 

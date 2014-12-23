@@ -32,7 +32,7 @@
 			  	<td>{{$job->priority}}</td>
 			  	<td>{{$job->status}}</td>
 			  	<td><a href="{{URL::to('jobs/' . $job->id)}}"><i class="glyphicon glyphicon-list-alt"></i></a></td>
-			  	<td><a class="uManage" href="{{ URL::to('job/' . $job->id . '/edit') }}"><i class="glyphicon glyphicon-edit managejobs"></i></a></td>
+			  	<td><a class="uManage" href="{{ URL::to('jobs/' . $job->id . '/edit') }}"><i class="glyphicon glyphicon-edit managejobs"></i></a></td>
 			  	<td><a class="uManage" data-toggle="modal" data-target="#deleteModal-{{$job->id}}"><i class="glyphicon glyphicon-remove managejobs"></i></a></td>
 			  </tr>
 			  @endforeach
@@ -41,7 +41,7 @@
     	@else
     	<p>No jobs to display.</p>
     	@endif
-    	<button type="button" class="btn btn-info btn-large profilesButton" data-toggle="modal" data-target="#addJob"><i class="glyphicon glyphicon-plus"></i> Add New job</button>
+    	<button type="button" class="btn btn-info btn-large jobsButton" data-toggle="modal" data-target="#addJob"><i class="glyphicon glyphicon-plus"></i> Add New job</button>
     	
 	</div>
 
