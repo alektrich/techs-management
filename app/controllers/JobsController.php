@@ -2,6 +2,13 @@
 
 class JobsController extends \BaseController {
 
+	public function __construct() {
+
+		$this->beforeFilter('auth');
+		$this->beforeFilter('csrf', array('on' => 'post'));
+
+	}
+
 	/**
 	 * Display a listing of the jobs.
 	 *
@@ -67,6 +74,8 @@ class JobsController extends \BaseController {
 	public function show($id)
 	{
 		//
+		$job = Job::find($id);
+		return View::make('jobs.show', compact('job'));
 	}
 
 

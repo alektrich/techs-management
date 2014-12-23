@@ -178,10 +178,14 @@ div#iframeHead {
     margin-bottom: 10px !important;
 }
 
-div#iframeHead h3, div#iframeHead span {
+div#iframeHead h3, div#iframeHead p {
     margin: 10px;
     /*height: 100%;*/
     position: relative;
+}
+
+div#iframeHead span {
+    margin-right: 10px;
 }
 
 div#iframeBody  {
