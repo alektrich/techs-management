@@ -15,11 +15,35 @@ class Job extends Eloquent {
 	 */
 	public static function getData() 
 	{
-		return ['jobs' 		  => static::all(),
-				'technicians' => User::getTechnicians(),
-				'locations'   => Location::all()->lists('location'),
-				'categories'  => Category::all()->lists('name'),
-				'priorities'  => Priority::all()->lists('priority')];
-	}
 
+		$locations = Location::all();
+
+		$cities = [];
+
+		foreach ($locations as $location) {
+			$cities[$location->location] = $location->location;
+		}
+
+		$categories = Category::all();
+
+		$names = [];
+
+		foreach ($categories as $category) {
+			$names[$category->name] = $category->name;
+		}
+
+		$priorities = Priority::all();
+
+		$priors = [];
+
+		foreach ($priorities as $priority) {
+			$priors[$priority->priority] = $priority->priority;
+		}
+
+		return [ 'jobs' 		  => static::all(),
+				 'technicians' => User::getTechnicians(),
+				 'locations'   => $cities,
+				 'categories'  => $names,
+				 'priorities'  => $priors ];
+	}
 }

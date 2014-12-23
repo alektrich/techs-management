@@ -129,7 +129,24 @@
 	            <!-- /.navbar-collapse -->
 			</nav>  	
 			<!-- /Left Sidebar -->
-
+			<div class="container-fluid">
+		        <div class="row">
+		            <div class="col-md-4 col-md-offset-4">
+		                @if(Session::has('message'))
+		                <div class="alert-box success">
+		                    <h2>{{ Session::get('message') }}</h2>
+		                </div>
+		                @endif
+		            </div>
+		        </div>
+		    </div>
+		    @foreach ($errors->all() as $message)
+		        <div class="row">
+		          <div class="col-md-4 col-md-offset-4">
+		            {{$message}}
+		          </div>
+		        </div>  
+		    @endforeach
 			<!-- Central container -->
 			@yield('content')
 			<!-- /Central container -->

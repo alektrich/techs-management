@@ -16,6 +16,8 @@
 				  	<th>Assigned To</th>
 				  	<th>Location</th>
 				  	<th>Priority</th>
+				  	<th>Status</th>
+				  	<th>Details</th>
 				  	<th>Edit</th>
 				  	<th>Delete</th>
 				</tr>
@@ -25,9 +27,11 @@
 			  	<td>{{$job->id}}</td>
 			  	<td>{{$job->title}}</td>
 			  	<td>{{$job->category}}</td>
-			  	<td>{{$job->assigned_to}}</td>
+			  	<td>{{User::find($job->assigned_to)->name}}</td>
 			  	<td>{{$job->location}}</td>
 			  	<td>{{$job->priority}}</td>
+			  	<td>{{$job->status}}</td>
+			  	<td><a href="{{URL::to('jobs/' . $job->id)}}"><i class="glyphicon glyphicon-list-alt"></i></a></td>
 			  	<td><a class="uManage" href="{{ URL::to('job/' . $job->id . '/edit') }}"><i class="glyphicon glyphicon-edit managejobs"></i></a></td>
 			  	<td><a class="uManage" data-toggle="modal" data-target="#deleteModal-{{$job->id}}"><i class="glyphicon glyphicon-remove managejobs"></i></a></td>
 			  </tr>
@@ -68,8 +72,8 @@
 			            {{Form::select('category', $categories, array('class' => 'form-control'))}}
 			        </div>
 			        <div class="form-group">
-			            {{Form::label('assign_to','Assign To')}}
-			            {{Form::select('assign_to', $technicians, array('class' => 'form-control'))}}
+			            {{Form::label('assigned_to','Assign To')}}
+			            {{Form::select('assigned_to', $technicians, array('class' => 'form-control'))}}
 			        </div>
 			        <div class="form-group">
 			            {{Form::label('location','Location')}}

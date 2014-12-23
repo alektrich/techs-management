@@ -11,20 +11,7 @@ class JobsController extends \BaseController {
 	{
 		//
 		$data = Job::getData();
-		// dd($data);
 		return View::make('jobs.index', $data);
-	}
-
-
-	/**
-	 * Show the form for creating a new job.
-	 *
-	 * @return Response
-	 */
-	public function create()
-	{
-		//
-		return View::make('jobs.create');
 	}
 
 
@@ -36,6 +23,38 @@ class JobsController extends \BaseController {
 	public function store()
 	{
 		//
+		$input = Input::all();
+		
+		$validator = Validator::make(
+            $input,
+            [
+                'title' 		=> 'required|min:5',
+                'description' 	=> 'required',
+                'category' 	=> 'required',
+                'assigned_to' 	=> 'required',
+                'location' 		=> 'required',
+                'priority'		=> 'required'
+            ]
+        );
+
+        if($validator->fails()){
+            return Redirect::to('jobs')->withErrors($validator)->withInput();
+        }
+
+        $newJob = new Job;
+        $newJob->title = $input['title'];
+        $newJob->description = $input['description'];
+        $newJob->category = $input['category'];
+        $newJob->assigned_to = (int)$input['assigned_to'];
+        $newJob->location = $input['location'];
+        $newJob->priority = $input['priority'];
+        $newJob->save();
+
+        if($newJob){
+            return Redirect::to('jobs');
+        }
+
+        return Redirect::to('jobs')->withInput();
 	}
 
 
