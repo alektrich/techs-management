@@ -6,14 +6,14 @@
 	<div class="container-fluid fullPage">
 		<div class="row">
 		    <div class="col-md-6 col-md-offset-1 editJob">
-		        {{ Form::open(array('route' => array('jobs.update'), 'method' => 'post')) }}
+		        {{ Form::open(array('url' => 'jobs/' . $job->id, 'method' => 'put')) }}
 			        <div class="form-group">
 			            {{Form::label('title','Title')}}
 			            {{Form::text('title', $job->title, array('class' => 'form-control'))}}
 			        </div>
 			        <div class="form-group">
 			            {{Form::label('description','Description')}}
-			            {{Form::textarea('description', $job->description, array('class' => 'form-control'))}}
+			            {{Form::textarea('description', $job->description, array('class' => 'form-control', 'rows' => '4'))}}
 			        </div>
 			         <div class="form-group">
 			            {{Form::label('category','Category')}}

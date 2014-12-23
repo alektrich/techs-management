@@ -37,7 +37,7 @@ class JobsController extends \BaseController {
             [
                 'title' 		=> 'required|min:5',
                 'description' 	=> 'required',
-                'category' 	=> 'required',
+                'category' 		=> 'required',
                 'assigned_to' 	=> 'required',
                 'location' 		=> 'required',
                 'priority'		=> 'required'
@@ -104,7 +104,34 @@ class JobsController extends \BaseController {
 	public function update($id)
 	{
 		//
-		dd(Input::all());
+		$input = Input::all();
+
+		$validator = Validator::make(
+            $input,
+            [
+                'title' 		=> 'required|min:5',
+                'description' 	=> 'required',
+                'category' 		=> 'required',
+                'assigned_to' 	=> 'required',
+                'location' 		=> 'required',
+                'priority'		=> 'required'
+            ]
+        );
+
+        if($validator->fails()){
+            return Redirect::route('jobs')->withErrors($validator)->withInput();
+        }
+
+        $updateJob 				= Job::find($id);
+        $updateJob->title 		= $input['title'];
+        $updateJob->description = $input['description'];
+        $updateJob->category	= $input['category'];
+        $updateJob->assigned_to = $input['assigned_to'];
+        $updateJob->location 	= $input['location'];
+        $updateJob->priority 	= $input['priority'];
+        $updateJob->save();
+
+        return Redirect::to('jobs');
 	}
 
 
