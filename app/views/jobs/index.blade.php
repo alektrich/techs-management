@@ -32,8 +32,8 @@
 			  	<td>{{$job->priority}}</td>
 			  	<td>{{$job->status}}</td>
 			  	<td><a href="{{URL::to('jobs/' . $job->id)}}"><i class="glyphicon glyphicon-list-alt"></i></a></td>
-			  	<td><a class="uManage" href="{{ URL::to('jobs/' . $job->id . '/edit') }}"><i class="glyphicon glyphicon-edit managejobs"></i></a></td>
-			  	<td><a class="uManage" data-toggle="modal" data-target="#deleteModal-{{$job->id}}"><i class="glyphicon glyphicon-remove managejobs"></i></a></td>
+			  	<td><a class="uManage" href="{{ URL::to('jobs/' . $job->id . '/edit') }}"><i class="glyphicon glyphicon-edit manageJobs"></i></a></td>
+			  	<td><a class="uManage" data-toggle="modal" data-target="#deleteModal-{{$job->id}}"><i class="glyphicon glyphicon-remove manageJobs"></i></a></td>
 			  </tr>
 			  @endforeach
 			</table>
@@ -96,4 +96,33 @@
 	  </div>
 	</div>  
 	<!-- /New Job Modal	 -->
+
+	@foreach($jobs as $job)
+	<!-- Delete Job Modal -->
+	<div class="modal fade" id="deleteModal-{{$job->id}}" tabindex="-1" role="dialog" aria-labelledby="deleteModal-{{$job->id}}Label" aria-hidden="true">
+	  <div class="modal-dialog">
+	    <div class="modal-content">
+	      <div class="modal-header">
+	        <button type="button" class="close" data-dismiss="modal"><span aria-hidden="true">&times;</span><span class="sr-only">Close</span></button>
+	        <h4 class="modal-title" id="deleteModal-{{$job->id}}Label">Delete Job {{$job->title}}</h4>
+	      </div>
+	      <div class="modal-body">
+	        <div class="row">
+			    <div class="col-md-6">
+		        	<strong>Are you sure you want to delete this job?</strong>
+		        	<p>Confirm by clicking Delete Job button.</p>
+			        {{ Form::open(array('url' => 'jobs/' . $job->id, 'method' => 'delete')) }}
+			    </div>
+			</div>
+	      </div>
+	      <div class="modal-footer">
+	        <button type="button" class="btn btn-default" data-dismiss="modal">Close</button>
+	        <button type="submit" class="btn btn-danger">Delete Job</button>
+	        {{ Form::close() }}
+	      </div>
+	    </div>
+	  </div>
+	</div>  
+	<!-- /Delete Job Modal	 -->
+	@endforeach
 @stop

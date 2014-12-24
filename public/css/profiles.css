@@ -11,6 +11,6 @@ button.profilesButton {
 	margin-bottom: 50px;
 }
 
-.manageUsers {
+.manageUsers, .manageJobs {
 	cursor: pointer;
 }

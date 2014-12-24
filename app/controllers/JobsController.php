@@ -144,6 +144,8 @@ class JobsController extends \BaseController {
 	public function destroy($id)
 	{
 		//
+		Job::find($id)->delete();
+		return Redirect::to('jobs');
 	}
 
 
