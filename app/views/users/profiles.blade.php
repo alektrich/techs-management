@@ -98,7 +98,7 @@
 	      <div class="modal-body">
 	        <div class="row">
 			    <div class="col-md-6">
-		        	<strong>Are you user you want to delete this user?</strong>
+		        	<strong>Are you sure you want to delete this user?</strong>
 		        	<p>Confirm by clicking Delete User button.</p>
 			        {{ Form::open(array('url' => 'user/' . $user->id, 'method' => 'delete')) }}
 			    </div>

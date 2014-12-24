@@ -8,12 +8,12 @@
 
 			<h3>{{ $job->title }}</h3>
 
-			<p>Description: {{ $job->description }}</p>
+			<p><strong>Description:</strong> {{ $job->description }}</p>
 			<p>
-				<span>Assigned To: {{ User::find($job->assigned_to)->name }}</span>
-				<span>Location: {{ $job->location }}</span>
-				<span>Category: {{ $job->category }}</span>
-				<span>Priority: {{ $job->priority }}</span>
+				<span><strong>Assigned To:</strong> {{ User::find($job->assigned_to)->name }}</span>
+				<span><strong>Location:</strong> {{ $job->location }}</span>
+				<span><strong>Category:</strong> {{ $job->category }}</span>
+				<span><strong>Priority:</strong> {{ $job->priority }}</span>
 			</p>
 
 		</div>
